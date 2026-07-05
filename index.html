@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Fit — Expert Relevance Dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="dossier">
+
+  <div class="case-plate">
+    <div class="kicker">Case File · Panel Composition Review</div>
+    <h1>Expert Relevance Dossier</h1>
+    <p>Weigh each panel member's declared expertise against the board's subject and against every candidate's stated background, then see who's actually fit to judge whom.</p>
+    <div class="subject-row">
+      <label for="subjectInput">Board Subject</label>
+      <input type="text" id="subjectInput" placeholder="e.g. Machine Learning Engineering, Distributed Systems">
+    </div>
+  </div>
+
+  <div class="exhibit">
+    <div class="exhibit-head">
+      <span class="tag">Exhibit A</span>
+      <h2>Interview Panel</h2>
+      <span class="count" id="expertCount">0 experts</span>
+    </div>
+    <div class="roster" id="expertRoster"></div>
+    <button class="add-row" id="addExpert">+ Add panel member</button>
+  </div>
+
+  <div class="exhibit">
+    <div class="exhibit-head">
+      <span class="tag">Exhibit B</span>
+      <h2>Candidates</h2>
+      <span class="count" id="candidateCount">0 candidates</span>
+    </div>
+    <div class="roster" id="candidateRoster"></div>
+    <button class="add-row" id="addCandidate">+ Add candidate</button>
+  </div>
+
+  <button class="compute-btn" id="computeBtn">Rule on relevance</button>
+
+  <div id="results"></div>
+
+  <footer>Scores are heuristic tag-overlap estimates — use as a starting signal, not a verdict.</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
