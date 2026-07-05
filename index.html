@@ -1,54 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Panel Fit — Expert Relevance Dossier</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Relevance System</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="dossier">
+    <div class="container">
+        <h1>Expert Relevance System</h1>
 
-  <div class="case-plate">
-    <div class="kicker">Case File · Panel Composition Review</div>
-    <h1>Expert Relevance Dossier</h1>
-    <p>Weigh each panel member's declared expertise against the board's subject and against every candidate's stated background, then see who's actually fit to judge whom.</p>
-    <div class="subject-row">
-      <label for="subjectInput">Board Subject</label>
-      <input type="text" id="subjectInput" placeholder="e.g. Machine Learning Engineering, Distributed Systems">
+        <form id="matchForm">
+
+            <h2>Candidate Details</h2>
+
+            <label for="candidateName">Candidate Name</label>
+            <input type="text" id="candidateName" placeholder="Enter your name">
+
+            <label for="candidateSubject">Candidate Subject</label>
+            <select id="candidateSubject">
+                <option value="">Select Subject</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Machine Learning">Machine Learning</option>
+            </select>
+
+            <label for="candidateSkill">Area of Expertise</label>
+            <select id="candidateSkill">
+                <option value="">Select Skill</option>
+                <option value="Python">Python</option>
+                <option value="HTML CSS">HTML & CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Java">Java</option>
+                <option value="Machine Learning">Machine Learning</option>
+            </select>
+
+            <h2>Interview Board Subject</h2>
+
+            <label for="expertSubject">Expert Subject</label>
+            <select id="expertSubject">
+                <option value="">Select Subject</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Machine Learning">Machine Learning</option>
+            </select>
+
+            <br><br>
+
+            <button type="button" onclick="findMatch()">
+                Find Best Expert
+            </button>
+
+        </form>
+
+        <div id="result">
+            <h2>Result</h2>
+            <p id="output">No result yet.</p>
+        </div>
     </div>
-  </div>
 
-  <div class="exhibit">
-    <div class="exhibit-head">
-      <span class="tag">Exhibit A</span>
-      <h2>Interview Panel</h2>
-      <span class="count" id="expertCount">0 experts</span>
-    </div>
-    <div class="roster" id="expertRoster"></div>
-    <button class="add-row" id="addExpert">+ Add panel member</button>
-  </div>
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
 
-  <div class="exhibit">
-    <div class="exhibit-head">
-      <span class="tag">Exhibit B</span>
-      <h2>Candidates</h2>
-      <span class="count" id="candidateCount">0 candidates</span>
-    </div>
-    <div class="roster" id="candidateRoster"></div>
-    <button class="add-row" id="addCandidate">+ Add candidate</button>
-  </div>
-
-  <button class="compute-btn" id="computeBtn">Rule on relevance</button>
-
-  <div id="results"></div>
-
-  <footer>Scores are heuristic tag-overlap estimates — use as a starting signal, not a verdict.</footer>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
